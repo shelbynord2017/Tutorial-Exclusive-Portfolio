@@ -261,6 +261,10 @@ MODAL
     flex-wrap: wrap;
 }
 
+.modal__box {
+    display: flex;
+}
+
 .modal__language {
     width: 25%;
     padding: 16px;
