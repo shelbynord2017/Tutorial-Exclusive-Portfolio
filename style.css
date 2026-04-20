@@ -336,6 +336,7 @@ MODAL
 .modal__contact {
     background-color: #242424;
     color: white;
+    z-index: 6;
 }
 
 .modal__title {
@@ -387,12 +388,13 @@ MODAL
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: -1,
 }
 
 .modal__overlay--loading {
     background-color: #242424;
     font-size: 80px;
-    z-index: -1;
+    
 }
 
 .modal__overlay--success {
@@ -400,7 +402,12 @@ MODAL
     font-size: 40px;
     font-weight: 700;
     text-align: center;
-    padding: 28px;
+    padding: 28px 0;
+    display: none;
+}
+
+.modal__overlay--visible {
+    z-index: 1;
 }
 
 .fa-spinner {
