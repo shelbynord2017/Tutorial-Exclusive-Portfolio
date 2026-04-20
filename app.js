@@ -4,25 +4,25 @@
 
 function contact(event) {
     event.preventDefault();
-    console.log('it worked')
-//     emailjs
-//         .sendForm(
-//             'service_rqanuq8',
-//             'template_s3chdi9',
-//             event.target,
-//             'OXbkIROvgSe0HUYwQ'
-//     ).then(() => {
-//         console.log('this worked')
-//     })
+    const loading = document.querySelector('.modal__overlay--loading');
+    const success = document.querySelector('.modal__overlay--success');
+    loading.classList += " modal__overlay--visible"
 
-const loading = document.querySelector('.modal__overlay--loading');
-const success = document.querySelector('.modal__overlay--success');
-loading.classList += " modal__overlay--visible"
-setTimeout(() => {
-    loading.classList.remove("modal__overlay--visible");
-    success.classList += " modal__overlay--visible"
-    console.log('it worked 1')
-}, 1000);
+    emailjs
+        .sendForm(
+            'service_rqanuq8',
+            'template_s3chdi9',
+            event.target,
+            'OXbkIROvgSe0HUYwQ'
+    ).then(() => {
+        loading.classList.remove("modal__overlay--visible");
+        success.classList += " modal__overlay--visible"
+    }) .catch(() => {
+        loading.classList.remove("modal__overlay--visible");
+        alert (
+          "The email service is temporarily unavailable. Please contact me directly at shelbynord2017@gmail.com."
+        )
+    })
 
 function submitForm() {
   setTimeout(() => {
