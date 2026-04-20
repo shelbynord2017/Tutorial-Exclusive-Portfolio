@@ -357,6 +357,10 @@ MODAL
     margin-bottom: 20px;
 }
 
+#contact__form {
+    background-color: #242424;
+}
+
 .form__submit {
     background-color: #f06449;
     border: 2px solid #f06449;
